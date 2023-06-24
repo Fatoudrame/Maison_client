@@ -1,0 +1,28 @@
+h1
+{
+     text-align: center;
+}
+
+.cadre{
+    margin-top:100px;
+    margin-left: 400px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 500px;
+    padding: 30px 40px;
+    
+
+}
+
+input, select
+{
+    margin: 5px 10px;
+    padding: 5px 20px;
+    display: block;
+
+}
+.flex
+{
+    display: flex;
+}
+
