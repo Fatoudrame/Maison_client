@@ -1,3 +1,26 @@
+<?php
+
+try {
+    $conection= new PDO("mysql:host=localhost;dbname=construction","root","");
+} catch (PDOException $th) {
+    $th->getMessage();
+}
+
+if (isset($_POST['envoyer'])) {
+    if (!empty($_POST['quartier']) && !empty($_POST['ville']) && !empty($_POST['proprietaire'])) {
+        $sql=$conection->prepare("INSERT INTO maison (quartier, ville, proprietaire) VALUES (:quartier, :ville, :proprietaire)");
+        $execution=$sql->execute(array(':quartier'=>$_POST['quartier'],':ville'=>$_POST['ville'],':proprietaire'=>$_POST['proprietaire']));
+        if (!$execution) {
+            echo "Echec!";
+        }else {
+            echo 'Executé!';
+        }
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
